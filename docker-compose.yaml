@@ -7,7 +7,7 @@ services:
       - SERVICE_FQDN_AS=/authz_server
       - SERVICE_FQDN_AS_3000
       - MS_URL=$SERVICE_FQDN_AS
-      - URL=$SERVICE_FQDN_AS
+      - url=$SERVICE_FQDN_AS
       - MS_NAME=as_int_didroom_authz_server1
       - ZENCODE_DIR=/app/authz_server
       - PUBLIC_DIR=/app/public/authz_server
@@ -27,7 +27,7 @@ services:
       - SERVICE_FQDN_RP=/relying_party
       - SERVICE_FQDN_RP_3000
       - MS_URL=$SERVICE_FQDN_RP
-      - URL=$SERVICE_FQDN_RP
+      - url=$SERVICE_FQDN_RP
       - MS_NAME=rp_int_didroom_rp1
       - ZENCODE_DIR=/app/relying_party
       - PUBLIC_DIR=/app/public/relying_party
@@ -47,7 +47,7 @@ services:
       - SERVICE_FQDN_CI=/credential_issuer
       - SERVICE_FQDN_CI_3000
       - MS_URL=$SERVICE_FQDN_CI
-      - URL=$SERVICE_FQDN_CI
+      - url=$SERVICE_FQDN_CI
       - MS_NAME=rp_int_didroom_rp1
       - ZENCODE_DIR=/app/credential_issuer
       - PUBLIC_DIR=/app/public/credential_issuer
