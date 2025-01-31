@@ -22,9 +22,11 @@ services:
     - type: bind
       source: ./as_int_didroom_authz_server1/authz_server
       target: /app/authz_server
+      is_directory: true
     - type: bind
       source: ./as_int_didroom_authz_server1/public
       target: /app/public
+      is_directory: true
 
   rp_int_didroom_rp1:
     container_name: rp_int_didroom_rp1
@@ -48,9 +50,11 @@ services:
     - type: bind
       source: ./rp_int_didroom_rp1/relying_party
       target: /app/relying_party
+      is_directory: true
     - type: bind
       source: ./rp_int_didroom_rp1/public
       target: /app/public
+      is_directory: true
 
   ci_int_didroom_issuer1:
     container_name: ci_int_didroom_issuer1
@@ -74,10 +78,8 @@ services:
     - type: bind
       source: ./ci_int_didroom_issuer1/credential_issuer
       target: /app/credential_issuer
+      is_directory: true
     - type: bind
       source: ./ci_int_didroom_issuer1/public
       target: /app/public
-
-volumes:
-  caddy_data:
-  caddy_config:
+      is_directory: true
