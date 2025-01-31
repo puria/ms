@@ -4,7 +4,8 @@ services:
     image: ghcr.io/forkbombeu/didroom_microservices:stable
     entrypoint: sh -c "make -C /app authorize && ./ncr"
     environment:
-      - SERVICE_FQDN_AS_3000=/authz_server
+      - SERVICE_FQDN_AS=/authz_server
+      - SERVICE_FQDN_AS_3000
       - MS_URL=$SERVICE_FQDN_AS
       - MS_NAME=as_int_didroom_authz_server1
       - ZENCODE_DIR=/app/authz_server
@@ -22,7 +23,8 @@ services:
     container_name: rp_int_didroom_rp1
     image: ghcr.io/forkbombeu/didroom_microservices:stable
     environment:
-      - SERVICE_FQDN_RP_3000=/relying_party
+      - SERVICE_FQDN_RP=/relying_party
+      - SERVICE_FQDN_RP_3000
       - MS_URL=$SERVICE_FQDN_RP
       - MS_NAME=rp_int_didroom_rp1
       - ZENCODE_DIR=/app/relying_party
@@ -40,7 +42,8 @@ services:
     container_name: ci_int_didroom_issuer1
     image: ghcr.io/forkbombeu/didroom_microservices:stable
     environment:
-      - SERVICE_FQDN_CI_3000=/credential_issuer
+      - SERVICE_FQDN_CI=/credential_issuer
+      - SERVICE_FQDN_CI_3000
       - MS_URL=$SERVICE_FQDN_CI
       - MS_NAME=rp_int_didroom_rp1
       - ZENCODE_DIR=/app/credential_issuer
