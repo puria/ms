@@ -1,0 +1,27 @@
+Rule unknown ignore
+
+Given I have a 'string' named 'location'
+Given I have a 'string' named 'name'
+Given I have a 'string' named 'contact'
+Given I have a 'string' named 'age_range'
+
+# keys
+Given I have a 'string' named 'id'
+
+# submission
+When I create the 'string dictionary' named 'submission'
+When I move 'location' in 'submission'
+When I move 'name' in 'submission'
+When I move 'contact' in 'submission'
+When I move 'age_range' in 'submission'
+
+# body
+When I create the 'string dictionary' named 'body'
+When I move 'submission' in 'body'
+When I move 'id' in 'body'
+
+Then print the 'body'
+
+Then I connect to 'address' and send object 'body' and send headers 'headers' and do post and output into 'post_result'
+Then I send object 'post_result' and send path 'result_path' and manipulate and get and output into 'data'
+

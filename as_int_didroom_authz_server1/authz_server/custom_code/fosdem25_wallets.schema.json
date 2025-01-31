@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "q1": {
+            "title": "What do you think of EUDI-ARF at the moment?",
+            "type": "string"
+        },
+        "q2": {
+            "title": "Do you use a an EUDI/W3C-VC Wallet? If so, which one?",
+            "type": "string"
+        },
+        "q3": {
+            "title": "What would you use a Wallet for?",
+            "type": "string"
+        }
+    },
+    "required": [
+        "q1",
+        "q2",
+        "q3"
+    ]
+}

@@ -1,0 +1,10 @@
+Given I have a 'string' in path 'authorization_details.claims.formid'
+Given I have a 'string' in path 'authorization_details.claims.instanceID'
+Given I have a 'string' in path 'authorization_details.claims.submissionDate'
+
+When I create the 'string dictionary' named 'holder_claims'
+When I move 'formid' in 'holder_claims'
+When I move 'instanceID' to 'instanceid' in 'holder_claims'
+When I move 'submissionDate' to 'submissiondate' in 'holder_claims'
+
+Then print the 'holder_claims'

@@ -1,0 +1,24 @@
+Rule unknown ignore
+
+Given I have a 'string' named 'q1'
+Given I have a 'string' named 'q2'
+Given I have a 'string' named 'q3'
+
+# keys
+Given I have a 'string' named 'id'
+
+# submission
+When I create the 'string dictionary' named 'submission'
+When I move 'q1' in 'submission'
+When I move 'q2' in 'submission'
+When I move 'q3' in 'submission'
+
+# body
+When I create the 'string dictionary' named 'body'
+When I move 'submission' in 'body'
+When I move 'id' in 'body'
+
+Then print the 'body'
+
+Then I connect to 'address' and send object 'body' and send headers 'headers' and do post and output into 'post_result'
+Then I send object 'post_result' and send path 'result_path' and manipulate and get and output into 'data'

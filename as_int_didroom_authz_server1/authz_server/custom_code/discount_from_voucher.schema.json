@@ -1,0 +1,12 @@
+{
+    "type": "object",
+    "required": [
+        "voucher"
+    ],
+    "properties": {
+        "voucher": {
+            "type": "string",
+            "title": "Voucher"
+        }
+    }
+}

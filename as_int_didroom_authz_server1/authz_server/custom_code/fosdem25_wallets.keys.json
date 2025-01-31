@@ -1,0 +1,8 @@
+{
+    "address": "https://ghisa.forkbomb.eu/?url=https%3A%2F%2Fkc.kobotoolbox.org%2Fapi%2Fv1%2Fsubmissions",
+    "id": "aNpnmXpJ8BDZiGfQdpCYAk",
+    "headers": {
+      "Authorization": "Token 0a9fce6d29d94aaa22c0b2f0cc93ad22503c0062"
+    },
+    "result_path": "result"
+}

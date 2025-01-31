@@ -1,0 +1,49 @@
+{
+    "type": "object",
+    "properties": {
+        "location": {
+            "type": "string",
+            "title": "Where are you?",
+            "enum": [
+                "home",
+                "office",
+                "elsewhere"
+            ],
+            "options": {
+                "enum_titles": [
+                    "At home",
+                    "At the office",
+                    "Not your business"
+                ]
+            }
+        },
+        "name": {
+            "type": "string",
+            "title": "Enter your full name"
+        },
+        "contact": {
+            "type": "string",
+            "title": "Enter your contact information"
+        },
+        "age_range": {
+            "type": "string",
+            "title": "What is your age range? (Select one)",
+            "enum": [
+                "Under 18",
+                "18–24",
+                "25–29",
+                "30–39",
+                "40–49",
+                "50–59",
+                "60 or older"
+            ],
+            "format": "radio"
+        }
+    },
+    "required": [
+        "location",
+        "name",
+        "contact",
+        "age_range"
+    ]
+}

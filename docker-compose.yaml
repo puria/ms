@@ -1,0 +1,59 @@
+services:
+  as_int_didroom_authz_server1:
+    container_name: as_int_didroom_authz_server1
+    image: ghcr.io/forkbombeu/didroom_microservices:stable
+    entrypoint: sh -c "make -C /app authorize && ./ncr"
+    environment:
+      - SERVICE_FQDN_AS_3000=/authz_server
+      - MS_URL=$SERVICE_FQDN_AS
+      - MS_NAME=as_int_didroom_authz_server1
+      - ZENCODE_DIR=/app/authz_server
+      - PUBLIC_DIR=/app/public/authz_server
+      - BASEPATH=/authz_server
+    volumes:
+    - type: bind
+      source: ./as_int_didroom_authz_server1/authz_server
+      target: /app/authz_server
+    - type: bind
+      source: ./as_int_didroom_authz_server1/public
+      target: /app/public
+
+  rp_int_didroom_rp1:
+    container_name: rp_int_didroom_rp1
+    image: ghcr.io/forkbombeu/didroom_microservices:stable
+    environment:
+      - SERVICE_FQDN_RP_3000=/relying_party
+      - MS_URL=$SERVICE_FQDN_RP
+      - MS_NAME=rp_int_didroom_rp1
+      - ZENCODE_DIR=/app/relying_party
+      - PUBLIC_DIR=/app/public/relying_party
+      - BASEPATH=/relying_party
+    volumes:
+    - type: bind
+      source: ./rp_int_didroom_rp1/relying_party
+      target: /app/relying_party
+    - type: bind
+      source: ./rp_int_didroom_rp1/public
+      target: /app/public
+
+  ci_int_didroom_issuer1:
+    container_name: ci_int_didroom_issuer1
+    image: ghcr.io/forkbombeu/didroom_microservices:stable
+    environment:
+      - SERVICE_FQDN_CI_3000=/credential_issuer
+      - MS_URL=$SERVICE_FQDN_CI
+      - MS_NAME=rp_int_didroom_rp1
+      - ZENCODE_DIR=/app/credential_issuer
+      - PUBLIC_DIR=/app/public/credential_issuer
+      - BASEPATH=/credential_issuer
+    volumes:
+    - type: bind
+      source: ./ci_int_didroom_issuer1/credential_issuer
+      target: /app/credential_issuer
+    - type: bind
+      source: ./ci_int_didroom_issuer1/public
+      target: /app/public
+
+volumes:
+  caddy_data:
+  caddy_config:
