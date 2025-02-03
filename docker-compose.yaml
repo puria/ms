@@ -5,17 +5,18 @@ services:
     entrypoint: sh -c "make -C /app authorize && ./ncr"
     environment:
       - SERVICE_FQDN_AUTH_3000
-      - MS_URL=${SERVICE_FQDN_AUTH}/authz_server
+      - MS_URL=$SERVICE_FQDN_AUTH/authz_server
+      # - MS_URL=http://127.0.0.1/authz_server
       - MS_NAME=as_int_didroom_authz_server1
       - ZENCODE_DIR=/app/authz_server
       - PUBLIC_DIR=/app/public/authz_server
       - BASEPATH=/authz_server
     healthcheck:
       test: ["CMD", "curl", "-f", "http://127.0.0.1:3000/authz_server"]
-      interval: 60s
-      retries: 5
-      start_period: 20s
+      interval: 2s
+      retries: 30 
+      # start_period: 20s
       timeout: 10s
     volumes:
-      - as_int_didroom_authz_server1/authz_server:/app/authz_server
-      - as_int_didroom_authz_server1/public:/app/public
+      - ./as_int_didroom_authz_server1/authz_server:/app/authz_server
+      - ./as_int_didroom_authz_server1/public:/app/public
