@@ -5,7 +5,8 @@ services:
     entrypoint: sh -c "make -C /app authorize && ./ncr"
     environment:
       - SERVICE_FQDN_AUTH_3000
-      - MS_URL=$SERVICE_FQDN_AUTH/authz_server
+      - SERVICE_URL_AUTH=/authz_server
+      - MS_URL=$SERVICE_URL_AUTH
       # - MS_URL=http://127.0.0.1/authz_server
       - MS_NAME=as_int_didroom_authz_server1
       - ZENCODE_DIR=/app/authz_server
