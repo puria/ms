@@ -1,8 +1,8 @@
 services:
-  as_int_didroom_authz_server1:
-    container_name: as_int_didroom_authz_server1
-    image: ghcr.io/forkbombeu/didroom_microservices:stable
-    entrypoint: sh -c "make -C /app authorize && ./ncr"
+  authorization_server:
+    build:
+      context: ./as_int_didroom_authz_server1
+      dockerfile: ./as_int_didroom_authz_server1/Dockerfile
     environment:
       - SERVICE_FQDN_AUTH_3000
       - SERVICE_URL_AUTH=/authz_server
