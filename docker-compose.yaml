@@ -2,7 +2,7 @@ services:
   authorization_server:
     build:
       context: ./as_int_didroom_authz_server1
-      dockerfile: ./as_int_didroom_authz_server1/Dockerfile
+      dockerfile: ./Dockerfile
     environment:
       - SERVICE_FQDN_AUTH_3000
       - SERVICE_URL_AUTH=/authz_server
@@ -19,5 +19,5 @@ services:
       # start_period: 20s
       timeout: 10s
     volumes:
-      - ./as_int_didroom_authz_server1/authz_server:/app/authz_server
-      - ./as_int_didroom_authz_server1/public:/app/public
+      - ./authz_server:/app/authz_server
+      - ./public:/app/public
